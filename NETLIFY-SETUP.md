@@ -16,12 +16,12 @@ yodobloom SAKE チャットボットのAPIキーをNetlifyの環境変数に設�
 
 ### 3. OpenAI APIキーの設定
 - **Key**: `OPENAI_API_KEY`
-- **Value**: `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`
+- **Value**: `[YOUR_OPENAI_API_KEY]`
 - **Save** をクリック
 
 ### 4. DeepL APIキーの設定
 - **Key**: `DEEPL_API_KEY`
-- **Value**: `d266de28-0978-4216-bb9d-17f137f6e904:fx`
+- **Value**: `[YOUR_DEEPL_API_KEY]`
 - **Save** をクリック
 
 ### 5. デプロイの実行

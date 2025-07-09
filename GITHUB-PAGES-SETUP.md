@@ -22,13 +22,13 @@ GitHub Pages は**静的サイトホスティング**のため、以下の制約
 // config/ai-config.js
 window.aiConfig = {
     openai: {
-        apiKey: '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',
+        apiKey: '[YOUR_OPENAI_API_KEY]',
         model: 'gpt-4',
         maxTokens: 1000,
         temperature: 0.7
     },
     deepl: {
-        apiKey: 'd266de28-0978-4216-bb9d-17f137f6e904:fx',
+        apiKey: '[YOUR_DEEPL_API_KEY]',
         apiUrl: 'https://api-free.deepl.com/v2/translate'
     },
     // ... rest of config
