@@ -189,27 +189,6 @@ const sakeData = {
                   <p><strong>相性の良い料理:</strong> 魚のマリネ、寿司、軽い前菜やサラダ</p>
                   <p><strong>プロコメント:</strong> 夏場の爽酒として最適で、和だけでなく軽い洋食にも馴染むデザイン性と味わい。</p>`,
         breweryInfo: `<p>土佐鶴酒造は、伝統的な技術を守りながら、現代的な味わいの酒造りにも挑戦しています。</p>`
-    },
-    'rihaku': {
-        name: '李白（りはく）純米吟醸 "Wandering Poet"',
-        type: '純米吟醸',
-        description: '世界各国で愛飲される島根を代表する酒。バランス型で米の旨味が主軸の実直な味わい。',
-        image: '李白（りはく） 純米吟醸 "Wandering Poet"（李白酒造・島根）.jpg',
-        brewery: '李白酒造・島根',
-        polishingRatio: '−',
-        alcoholContent: '15%',
-        sakeMeter: '−',
-        acidity: '−',
-        hasAward: false,
-        overview: `<p>純米吟醸規格、島根県産米使用。海外市場でも定評のあるシリーズ。</p>
-                   <p><strong>グローバル展開:</strong> 世界各国で愛飲されている島根を代表する酒の一つ。</p>`,
-        taste: `<p><strong>香り:</strong> バランス型で果実香よりもお米由来の旨味が主軸</p>
-                <p><strong>味わい:</strong> まろやかさとすっきり感が共存</p>
-                <p><strong>特徴:</strong> 過度に主張しないため、食卓のメインからご飯にまで違和感なく寄り添う</p>`,
-        pairing: `<p><strong>おすすめ温度:</strong> 常温〜室温で飲むと米の旨味が際立つ</p>
-                  <p><strong>相性の良い料理:</strong> 和食全般（煮魚、キノコ料理）、家庭的な食事</p>
-                  <p><strong>プロコメント:</strong> グローバルでも通用するバランス力。実直な味わいが◎。</p>`,
-        breweryInfo: `<p>李白酒造は島根県の蔵元で、中国の詩人・李白にちなんで名付けられました。世界市場での展開に力を入れています。</p>`
     }
 };
 
