@@ -23,3 +23,8 @@ functions/
 *.swp
 *.swo
 *~
+
+# API Setup guides with sensitive information
+API-SETUP-GUIDE.md
+NETLIFY-SETUP.md
+GITHUB-PAGES-SETUP.md
