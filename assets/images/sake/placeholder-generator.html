@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>日本酒画像プレースホルダー生成</title>
+    <style>
+        canvas {
+            margin: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>日本酒画像プレースホルダー生成</h1>
+    <p>以下のキャンバスを右クリックして画像として保存してください。</p>
+    
+    <script>
+        const sakes = [
+            { id: 'dassai', name: '獺祭', color: '#E3F2FD' },
+            { id: 'kubota', name: '久保田', color: '#F3E5F5' },
+            { id: 'jikon', name: '而今', color: '#E8F5E9' },
+            { id: 'nabeshima', name: '鍋島', color: '#FFF3E0' },
+            { id: 'kokuryu', name: '黒龍', color: '#E0E0E0' },
+            { id: 'aramasa', name: '新政', color: '#FFEBEE' },
+            { id: 'juyondai', name: '十四代', color: '#FFF8E1' },
+            { id: 'hiroki', name: '飛露喜', color: '#E8EAF6' },
+            { id: 'denshu', name: '田酒', color: '#E0F2F1' },
+            { id: 'dewazakura', name: '出羽桜', color: '#FCE4EC' },
+            { id: 'spring-limited', name: '春季限定', color: '#F8BBD0' },
+            { id: 'summer-limited', name: '夏季限定', color: '#B3E5FC' }
+        ];
+
+        sakes.forEach(sake => {
+            const canvas = document.createElement('canvas');
+            canvas.width = 400;
+            canvas.height = 400;
+            canvas.id = sake.id;
+            
+            const ctx = canvas.getContext('2d');
+            
+            // 背景
+            ctx.fillStyle = sake.color;
+            ctx.fillRect(0, 0, 400, 400);
+            
+            // ボトルの形を描画
+            ctx.fillStyle = '#333';
+            ctx.beginPath();
+            ctx.moveTo(150, 100);
+            ctx.lineTo(150, 50);
+            ctx.lineTo(250, 50);
+            ctx.lineTo(250, 100);
+            ctx.lineTo(280, 350);
+            ctx.lineTo(120, 350);
+            ctx.closePath();
+            ctx.fill();
+            
+            // ラベル
+            ctx.fillStyle = '#fff';
+            ctx.fillRect(140, 150, 120, 150);
+            
+            // 銘柄名
+            ctx.fillStyle = '#000';
+            ctx.font = 'bold 24px serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(sake.name, 200, 230);
+            
+            // 説明文
+            const label = document.createElement('p');
+            label.textContent = `${sake.name} - ${sake.id}.jpg として保存`;
+            
+            document.body.appendChild(canvas);
+            document.body.appendChild(label);
+        });
+    </script>
+</body>
+</html>

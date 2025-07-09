@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" width="300" height="400">
+  <!-- Background -->
+  <rect width="300" height="400" fill="#f8f8f8"/>
+  
+  <!-- Sake Bottle Shape -->
+  <g transform="translate(150, 200)">
+    <!-- Bottle Body -->
+    <rect x="-40" y="-80" width="80" height="160" rx="5" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+    
+    <!-- Bottle Neck -->
+    <rect x="-20" y="-120" width="40" height="50" rx="3" fill="#5dade2" stroke="#2980b9" stroke-width="2"/>
+    
+    <!-- Bottle Cap -->
+    <rect x="-15" y="-130" width="30" height="15" rx="2" fill="#ffffff" stroke="#bdc3c7" stroke-width="1"/>
+    
+    <!-- Label Background -->
+    <rect x="-35" y="-50" width="70" height="90" rx="3" fill="#ffffff" stroke="#bdc3c7" stroke-width="1"/>
+    
+    <!-- Brand Name - 白瀧 -->
+    <text x="0" y="-20" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#3498db">白瀧</text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="5" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#7f8c8d">SHIRATAKI</text>
+    
+    <!-- Decorative Waterfall -->
+    <g transform="translate(0, 25)">
+      <circle cx="0" cy="0" r="12" fill="none" stroke="#3498db" stroke-width="2"/>
+      <path d="M-4,-8 Q0,-6 4,-8 Q2,-4 0,0 Q-2,-4 -4,-8" fill="#3498db" opacity="0.3"/>
+      <path d="M-2,0 Q0,2 2,0 Q1,4 0,8 Q-1,4 -2,0" fill="#3498db" opacity="0.3"/>
+    </g>
+  </g>
+  
+  <!-- Shadow -->
+  <ellipse cx="150" cy="360" rx="50" ry="10" fill="#000000" opacity="0.2"/>
+</svg>

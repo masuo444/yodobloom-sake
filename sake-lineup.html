@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>厳選日本酒ラインナップ | yodobloom SAKE</title>
+    <meta name="description" content="yodobloom SAKEが季節ごとに厳選した100種類の日本酒ラインナップ。全国の優秀な蔵元から集めた逸品をご紹介します。">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sake-lineup.css">
+    <link rel="icon" href="assets/images/yodobloom-favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <h1><a href="index.html">yodobloom SAKE</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="index.html#products" class="active">商品一覧</a></li>
+                <li><a href="index.html#story">こだわり</a></li>
+                <li><a href="index.html#ai-sakura">AIサポート</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="sake-lineup-main">
+        <section class="lineup-hero">
+            <div class="container">
+                <h1 class="lineup-title">厳選日本酒ラインナップ</h1>
+                <p class="lineup-subtitle">季節ごとに選び抜かれた100種類の逸品</p>
+            </div>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="lineup-filter">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">すべて</button>
+                    <button class="filter-btn" data-category="daiginjo">大吟醸</button>
+                    <button class="filter-btn" data-category="junmai-daiginjo">純米大吟醸</button>
+                    <button class="filter-btn" data-category="ginjo">吟醸</button>
+                    <button class="filter-btn" data-category="junmai-ginjo">純米吟醸</button>
+                    <button class="filter-btn" data-category="junmai">純米酒</button>
+                    <button class="filter-btn" data-category="seasonal">季節限定</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sake Grid -->
+        <section class="lineup-grid">
+            <div class="container">
+                <div class="sake-grid" id="sakeGrid">
+                    <!-- 獺祭 -->
+                    <article class="sake-card" data-category="junmai-daiginjo">
+                        <div class="sake-image">
+                            <img src="assets/images/sake/dassai.svg" alt="獺祭 純米大吟醸 45">
+                            <div class="sake-badge">人気No.1</div>
+                        </div>
+                        <div class="sake-content">
+                            <h3 class="sake-name">獺祭 純米大吟醸 45</h3>
+                            <p class="sake-brewery">旭酒造（山口県）</p>
+                            <p class="sake-description">
+                                フルーティーで華やかな香りと、上品な甘みが特徴。日本酒初心者にもおすすめの逸品。
+                            </p>
+                            <div class="sake-details">
+                                <span class="sake-spec">精米歩合: 45%</span>
+                                <span class="sake-spec">アルコール度: 16%</span>
+                            </div>
+                            <div class="sake-tags">
+                                <span class="sake-tag">フルーティー</span>
+                                <span class="sake-tag">華やか</span>
+                                <span class="sake-tag">初心者向け</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 久保田 -->
+                    <article class="sake-card" data-category="ginjo">
+                        <div class="sake-image">
+                            <img src="assets/images/sake/kubota.svg" alt="久保田 千寿">
+                            <div class="sake-badge">定番</div>
+                        </div>
+                        <div class="sake-content">
+                            <h3 class="sake-name">久保田 千寿</h3>
+                            <p class="sake-brewery">朝日酒造（新潟県）</p>
+                            <p class="sake-description">
+                                すっきりとした飲み口で、食中酒として最適。新潟の淡麗辛口を代表する銘柄。
+                            </p>
+                            <div class="sake-details">
+                                <span class="sake-spec">精米歩合: 55%</span>
+                                <span class="sake-spec">アルコール度: 15%</span>
+                            </div>
+                            <div class="sake-tags">
+                                <span class="sake-tag">淡麗辛口</span>
+                                <span class="sake-tag">食中酒</span>
+                                <span class="sake-tag">定番</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 而今 -->
+                    <article class="sake-card" data-category="junmai-ginjo">
+                        <div class="sake-image">
+                            <img src="assets/images/sake/jikon.svg" alt="而今 純米吟醸">
+                            <div class="sake-badge">希少</div>
+                        </div>
+                        <div class="sake-content">
+                            <h3 class="sake-name">而今 純米吟醸</h3>
+                            <p class="sake-brewery">木屋正酒造（三重県）</p>
+                            <p class="sake-description">
+                                フレッシュで瑞々しい味わい。入手困難な人気銘柄で、バランスの良さが魅力。
+                            </p>
+                            <div class="sake-details">
+                                <span class="sake-spec">精米歩合: 50%</span>
+                                <span class="sake-spec">アルコール度: 16%</span>
+                            </div>
+                            <div class="sake-tags">
+                                <span class="sake-tag">フレッシュ</span>
+                                <span class="sake-tag">希少</span>
+                                <span class="sake-tag">バランス型</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 鍋島 -->
+                    <article class="sake-card" data-category="daiginjo">
+                        <div class="sake-image">
+                            <img src="assets/images/sake/nabeshima.svg" alt="鍋島 大吟醸">
+                            <div class="sake-badge">受賞歴多数</div>
+                        </div>
+                        <div class="sake-content">
+                            <h3 class="sake-name">鍋島 大吟醸</h3>
+                            <p class="sake-brewery">富久千代酒造（佐賀県）</p>
+                            <p class="sake-description">
+                                国際的な品評会で多数の受賞歴を持つ実力派。華やかさと繊細さを併せ持つ。
+                            </p>
+                            <div class="sake-details">
+                                <span class="sake-spec">精米歩合: 40%</span>
+                                <span class="sake-spec">アルコール度: 17%</span>
+                            </div>
+                            <div class="sake-tags">
+                                <span class="sake-tag">受賞歴</span>
+                                <span class="sake-tag">華やか</span>
+                                <span class="sake-tag">繊細</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 黒龍 -->
+                    <article class="sake-card" data-category="junmai-daiginjo">
+                        <div class="sake-image">
+                            <img src="assets/images/sake/kokuryu.svg" alt="黒龍 しずく">
+                            <div class="sake-badge">プレミアム</div>
+                        </div>
+                        <div class="sake-content">
+                            <h3 class="sake-name">黒龍 しずく</h3>
+                            <p class="sake-brewery">黒龍酒造（福井県）</p>
+                            <p class="sake-description">
+                                袋吊りで採取した贅沢な雫酒。透明感のある味わいと上品な余韻が特徴。
+                            </p>
+                            <div class="sake-details">
+                                <span class="sake-spec">精米歩合: 35%</span>
+                                <span class="sake-spec">アルコール度: 16%</span>
+                            </div>
+                            <div class="sake-tags">
+                                <span class="sake-tag">袋吊り</span>
+                                <span class="sake-tag">プレミアム</span>
+                                <span class="sake-tag">透明感</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 新政 -->
+                    <article class="sake-card" data-category="junmai">
+                        <div class="sake-image">
+                            <img src="assets/images/sake/aramasa.svg" alt="新政 No.6">
+                            <div class="sake-badge">革新的</div>
+                        </div>
+                        <div class="sake-content">
+                            <h3 class="sake-name">新政 No.6</h3>
+                            <p class="sake-brewery">新政酒造（秋田県）</p>
+                            <p class="sake-description">
+                                6号酵母を使用した革新的な純米酒。独特の酸味と旨味のバランスが絶妙。
+                            </p>
+                            <div class="sake-details">
+                                <span class="sake-spec">精米歩合: 60%</span>
+                                <span class="sake-spec">アルコール度: 15%</span>
+                            </div>
+                            <div class="sake-tags">
+                                <span class="sake-tag">6号酵母</span>
+                                <span class="sake-tag">革新的</span>
+                                <span class="sake-tag">酸味</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 十四代 -->
+                    <article class="sake-card" data-category="junmai-ginjo">
+                        <div class="sake-image">
+                            <img src="assets/images/sake/juyondai.svg" alt="十四代 本丸">
+                            <div class="sake-badge">幻の酒</div>
+                        </div>
+                        <div class="sake-content">
+                            <h3 class="sake-name">十四代 本丸</h3>
+                            <p class="sake-brewery">高木酒造（山形県）</p>
+                            <p class="sake-description">
+                                日本酒ファンの間で「幻の酒」と呼ばれる超人気銘柄。甘美で深い味わい。
+                            </p>
+                            <div class="sake-details">
+                                <span class="sake-spec">精米歩合: 55%</span>
+                                <span class="sake-spec">アルコール度: 15%</span>
+                            </div>
+                            <div class="sake-tags">
+                                <span class="sake-tag">幻の酒</span>
+                                <span class="sake-tag">甘美</span>
+                                <span class="sake-tag">超希少</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 飛露喜 -->
+                    <article class="sake-card" data-category="junmai-daiginjo">
+                        <div class="sake-image">
+                            <img src="assets/images/sake/hiroki.svg" alt="飛露喜 純米大吟醸">
+                            <div class="sake-badge">東北の星</div>
+                        </div>
+                        <div class="sake-content">
+                            <h3 class="sake-name">飛露喜 純米大吟醸</h3>
+                            <p class="sake-brewery">廣木酒造（福島県）</p>
+                            <p class="sake-description">
+                                福島を代表する銘酒。フルーティーな香りと、キレのある後味が魅力。
+                            </p>
+                            <div class="sake-details">
+                                <span class="sake-spec">精米歩合: 40%</span>
+                                <span class="sake-spec">アルコール度: 16%</span>
+                            </div>
+                            <div class="sake-tags">
+                                <span class="sake-tag">東北代表</span>
+                                <span class="sake-tag">キレ</span>
+                                <span class="sake-tag">希少</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 田酒 -->
+                    <article class="sake-card" data-category="junmai">
+                        <div class="sake-image">
+                            <img src="assets/images/sake/denshu.svg" alt="田酒 特別純米">
+                            <div class="sake-badge">青森の至宝</div>
+                        </div>
+                        <div class="sake-content">
+                            <h3 class="sake-name">田酒 特別純米</h3>
+                            <p class="sake-brewery">西田酒造（青森県）</p>
+                            <p class="sake-description">
+                                青森県産米100%使用。米の旨味を最大限に引き出した、濃醇な味わい。
+                            </p>
+                            <div class="sake-details">
+                                <span class="sake-spec">精米歩合: 55%</span>
+                                <span class="sake-spec">アルコール度: 16%</span>
+                            </div>
+                            <div class="sake-tags">
+                                <span class="sake-tag">青森産</span>
+                                <span class="sake-tag">濃醇</span>
+                                <span class="sake-tag">米の旨味</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 出羽桜 -->
+                    <article class="sake-card" data-category="ginjo">
+                        <div class="sake-image">
+                            <img src="assets/images/sake/dewazakura.svg" alt="出羽桜 桜花">
+                            <div class="sake-badge">吟醸の先駆け</div>
+                        </div>
+                        <div class="sake-content">
+                            <h3 class="sake-name">出羽桜 桜花 吟醸酒</h3>
+                            <p class="sake-brewery">出羽桜酒造（山形県）</p>
+                            <p class="sake-description">
+                                吟醸酒ブームの火付け役。フルーティーな香りと爽やかな味わいが特徴。
+                            </p>
+                            <div class="sake-details">
+                                <span class="sake-spec">精米歩合: 50%</span>
+                                <span class="sake-spec">アルコール度: 15%</span>
+                            </div>
+                            <div class="sake-tags">
+                                <span class="sake-tag">吟醸酒の元祖</span>
+                                <span class="sake-tag">爽やか</span>
+                                <span class="sake-tag">定番</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 春の限定酒 -->
+                    <article class="sake-card" data-category="seasonal">
+                        <div class="sake-image">
+                            <img src="assets/images/sake/spring-limited.svg" alt="春季限定 花見酒">
+                            <div class="sake-badge">春季限定</div>
+                        </div>
+                        <div class="sake-content">
+                            <h3 class="sake-name">春季限定 花見酒セレクション</h3>
+                            <p class="sake-brewery">各蔵元の春季限定酒</p>
+                            <p class="sake-description">
+                                桜の季節に合わせた、各蔵元の春季限定酒を厳選。華やかで軽やかな味わい。
+                            </p>
+                            <div class="sake-details">
+                                <span class="sake-spec">精米歩合: 各種</span>
+                                <span class="sake-spec">期間限定: 3-5月</span>
+                            </div>
+                            <div class="sake-tags">
+                                <span class="sake-tag">春限定</span>
+                                <span class="sake-tag">花見</span>
+                                <span class="sake-tag">華やか</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 夏の限定酒 -->
+                    <article class="sake-card" data-category="seasonal">
+                        <div class="sake-image">
+                            <img src="assets/images/sake/summer-limited.svg" alt="夏季限定 涼酒">
+                            <div class="sake-badge">夏季限定</div>
+                        </div>
+                        <div class="sake-content">
+                            <h3 class="sake-name">夏季限定 涼酒セレクション</h3>
+                            <p class="sake-brewery">各蔵元の夏季限定酒</p>
+                            <p class="sake-description">
+                                暑い夏にぴったりの爽やかな日本酒。冷やして楽しむ、軽快な味わい。
+                            </p>
+                            <div class="sake-details">
+                                <span class="sake-spec">精米歩合: 各種</span>
+                                <span class="sake-spec">期間限定: 6-8月</span>
+                            </div>
+                            <div class="sake-tags">
+                                <span class="sake-tag">夏限定</span>
+                                <span class="sake-tag">爽快</span>
+                                <span class="sake-tag">冷酒</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="lineup-cta">
+            <div class="container">
+                <h2>100種類の日本酒を体験しよう</h2>
+                <p>季節ごとに変わる厳選ラインナップ。唎酒師®のガイド付きで、あなたにぴったりの一杯を見つけてください。</p>
+                <a href="index.html#contact" class="cta-button">予約・お問い合わせ</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 yodobloom SAKE. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // フィルター機能
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const sakeCards = document.querySelectorAll('.sake-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const category = button.getAttribute('data-category');
+                    
+                    // アクティブボタンの切り替え
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    // カードのフィルタリング
+                    sakeCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        
+                        if (category === 'all' || cardCategory === category) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeIn 0.5s ease-in-out';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

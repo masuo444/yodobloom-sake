@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yodobloom SAKE | プレミアム日本酒セレクション</title>
+    <meta name="description" content="yodobloom SAKEは厳選されたプレミアム日本酒をお届けします。鳴門鯛をはじめとする高品質な酒造の逸品をお楽しみください。">
+    <meta name="keywords" content="yodobloom SAKE, 日本酒, 鳴門鯛, プレミアム, 純米吟醸, 純米大吟醸, オンライン販売">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile-enhancements.css">
+    <link rel="icon" href="assets/images/yodobloom-favicon.ico">
+    
+    <!-- OGP Tags -->
+    <meta property="og:title" content="yodobloom SAKE | プレミアム日本酒セレクション">
+    <meta property="og:description" content="yodobloom SAKEは厳選されたプレミアム日本酒をお届けします。鳴門鯛をはじめとする高品質な酒造の逸品をお楽しみください。">
+    <meta property="og:url" content="https://yodobloom.com/sake/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/yodobloom-og-image.jpg">
+    <meta property="og:site_name" content="yodobloom SAKE">
+    <meta property="og:locale" content="ja_JP">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="yodobloom SAKE | プレミアム日本酒セレクション">
+    <meta name="twitter:description" content="yodobloom SAKEは厳選されたプレミアム日本酒をお届けします。鳴門鯛をはじめとする高品質な酒造の逸品をお楽しみください。">
+    <meta name="twitter:image" content="assets/images/yodobloom-og-image.jpg">
+</head>
+<body>
+    <!-- Google Translate (Hidden) -->
+    <div id="google_translate_element" style="display: none;"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <h1>yodobloom SAKE</h1>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <ul class="nav-menu">
+                <li><a href="#home">ホーム</a></li>
+                <li><a href="#company">サービス</a></li>
+                <li><a href="#products">商品一覧</a></li>
+                <li><a href="#story">こだわり</a></li>
+                <li><a href="#ai-sakura">AIサポート</a></li>
+            </ul>
+            
+            <!-- Mobile Controls -->
+            <div class="mobile-controls">
+                <!-- Custom Language Selector -->
+                <div class="language-selector" id="languageSelector">
+                    <button class="language-btn" id="languageBtn">
+                        <span class="language-icon">🌐</span>
+                        <span class="language-text">日本語</span>
+                        <span class="language-arrow">▼</span>
+                    </button>
+                    <div class="language-dropdown" id="languageDropdown">
+                        <div class="language-option" data-lang="ja">🇯🇵 日本語</div>
+                        <div class="language-option" data-lang="en">🇺🇸 English</div>
+                        <div class="language-option" data-lang="zh-cn">🇨🇳 简体中文</div>
+                        <div class="language-option" data-lang="zh-tw">🇹🇼 繁體中文</div>
+                        <div class="language-option" data-lang="fr">🇫🇷 Français</div>
+                        <div class="language-option" data-lang="ko">🇰🇷 한국어</div>
+                        <div class="language-option" data-lang="es">🇪🇸 Español</div>
+                        <div class="language-option" data-lang="de">🇩🇪 Deutsch</div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Hamburger Menu -->
+                <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+            <div class="mobile-menu-content">
+                <div class="mobile-menu-header">
+                    <h2>yodobloom SAKE</h2>
+                    <button class="mobile-menu-close" id="mobileMenuClose">&times;</button>
+                </div>
+                <ul class="mobile-menu-list">
+                    <li><a href="#home" class="mobile-menu-link">🏠 ホーム</a></li>
+                    <li><a href="#company" class="mobile-menu-link">🏪 サービス</a></li>
+                    <li><a href="#products" class="mobile-menu-link">🍶 商品一覧</a></li>
+                    <li><a href="#story" class="mobile-menu-link">💫 こだわり</a></li>
+                    <li><a href="#ai-sakura" class="mobile-menu-link">🌸 AIサポート</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">日本酒テーマパーク</h1>
+            <p class="hero-subtitle">季節ごとに厳選された１００種類の日本酒を試飲しながら唳酒師®がガイドしてくれる</p>
+            <div class="business-type-display">
+                <span id="businessTypeText">大阪・北区 | 唳酒師ガイド付き試飲体験</span>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="assets/images/yodobloom-hero.jpg" alt="yodobloom SAKE 日本酒テーマパーク" id="heroImage">
+        </div>
+    </section>
+
+    <!-- Company Section -->
+    <section id="company" class="company">
+        <div class="container">
+            <h2>yodobloom SAKEについて</h2>
+            <div class="company-grid">
+                <div class="company-info">
+                    <h3 id="companyName">yodobloom SAKE (ヨドブルーム サケ)</h3>
+                    <p id="companyDescription">季節ごとに厳選された１００種類の日本酒を試飲しながら、唳酒師®がガイドしてくれる日本酒テーマパークです。個人の好みに合わせたカスタマイズされた日本酒推薦体験とアプリベースの酒チャレンジを提供しています。</p>
+                    
+                    <div class="company-details">
+                        <div class="detail-item">
+                            <span class="label">所在地:</span>
+                            <span id="location">大阪市北区大深町1-1 2階</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">電話:</span>
+                            <span id="phone">06-4802-1010</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">営業時間:</span>
+                            <span id="motto">平日 12:00-22:00 | 土日祥日 10:00-22:00</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">特徴:</span>
+                            <span id="features">唳酒師ガイド付き、アプリ連動、個人化推薦</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="company-image">
+                    <img src="assets/images/yodobloom-interior.jpg" alt="yodobloom SAKE テーマパーク内部" id="companyImage">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>厳選日本酒ラインナップ</h2>
+            
+            <!-- Product Categories -->
+            <div class="product-categories">
+                <button class="category-btn active" data-category="all">全商品</button>
+                <button class="category-btn" data-category="premium">純米大吟醸</button>
+                <button class="category-btn" data-category="classic">純米・吟醸</button>
+                <button class="category-btn" data-category="limited">特別限定</button>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- 1. 鳴門鯛 LED（レッド） -->
+                <div class="product-card" data-category="limited">
+                    <div class="product-image">
+                        <img src="鳴門鯛 LED（レッド）（本家松浦酒造・徳島）.JPG" alt="鳴門鯛 LED（レッド）" loading="lazy">
+                    </div>
+                    <div class="product-header">
+                        <h3 class="product-name">鳴門鯛 LED（レッド）</h3>
+                        <p class="product-type">純米吟醸</p>
+                        <p class="product-description">LED照射による独自酵母で生まれたモダンな味わい。Kura Masterプラチナ賞受賞。</p>
+                    </div>
+                    
+                    <a href="sake-detail-template.html?id=narutotai-led" class="product-details-toggle">
+                        詳細を見る <span class="toggle-icon">→</span>
+                    </a>
+                    
+                    <div class="product-details-content">
+                        <div class="product-tabs">
+                            <button class="product-tab-btn active" data-tab="overview">概要</button>
+                            <button class="product-tab-btn" data-tab="details">詳細</button>
+                            <button class="product-tab-btn" data-tab="taste">味わい</button>
+                            <button class="product-tab-btn" data-tab="pairing">楽しみ方</button>
+                        </div>
+                        
+                        <div class="product-tab-content">
+                            <div class="tab-pane active" data-tab="overview">
+                                <p>徳島県産「あわいちば山田錦」100%、LED夢酵母（3826 Type2）使用の全徳島仕込み。</p>
+                                <p><strong>受賞歴:</strong> Kura Masterプラチナ賞、IWC銀賞ほか国内外で受賞歴多数。ANA機内食採用。</p>
+                            </div>
+                            <div class="tab-pane" data-tab="details">
+                                <p><strong>原料米:</strong> 徳島県産あわいちば山田錦100%</p>
+                                <p><strong>精米歩合:</strong> 58%</p>
+                                <p><strong>アルコール度数:</strong> 15%</p>
+                                <p><strong>日本酒度:</strong> −20</p>
+                                <p><strong>酸度:</strong> 2.8</p>
+                                <p><strong>蔵元:</strong> 本家松浦酒造・徳島</p>
+                            </div>
+                            <div class="tab-pane" data-tab="taste">
+                                <p><strong>香り:</strong> りんごやトロピカルフルーツの甘香</p>
+                                <p><strong>味わい:</strong> ヨーグルト系の酸、リッチな酸味と重層的な旨味</p>
+                                <p><strong>特徴:</strong> 緻密な酸設計による爽快な酸味と控えめな甘さの調和</p>
+                            </div>
+                            <div class="tab-pane" data-tab="pairing">
+                                <p><strong>おすすめ温度:</strong> よく冷やして（8〜12℃）</p>
+                                <p><strong>グラス:</strong> ワイングラス推奨</p>
+                                <p><strong>相性の良い料理:</strong> 前菜、チーズ、刺身</p>
+                                <p><strong>プロコメント:</strong> 酸味系が好みの方に特におすすめ。食事シーンを格上げする一本。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. 純米大吟醸 悠星 -->
+                <div class="product-card" data-category="premium">
+                    <div class="product-image">
+                        <img src="純米大吟醸 悠星（ゆうせい）720ml（白牡丹酒造・広島）.JPG" alt="純米大吟醸 悠星" loading="lazy">
+                    </div>
+                    <div class="product-header">
+                        <h3 class="product-name">純米大吟醸 悠星（ゆうせい）</h3>
+                        <p class="product-type">純米大吟醸</p>
+                        <p class="product-description">星が瞬く瀬戸内の夜と厳島神社をイメージした上品な一本。ジューシーなメロン香が特徴。</p>
+                    </div>
+                    
+                    <a href="sake-detail-template.html?id=yusei" class="product-details-toggle">
+                        詳細を見る <span class="toggle-icon">→</span>
+                    </a>
+                    
+                    <div class="product-details-content">
+                        <div class="product-tabs">
+                            <button class="product-tab-btn active" data-tab="overview">概要</button>
+                            <button class="product-tab-btn" data-tab="details">詳細</button>
+                            <button class="product-tab-btn" data-tab="taste">味わい</button>
+                            <button class="product-tab-btn" data-tab="pairing">楽しみ方</button>
+                        </div>
+                        
+                        <div class="product-tab-content">
+                            <div class="tab-pane active" data-tab="overview">
+                                <p>広島産八反35号、広島令和一号酵母使用。星が瞬く瀬戸内の夜と厳島神社の大鳥居をイメージしたラベル。</p>
+                                <p><strong>デザイン:</strong> 物語性の高い美しいボトル。贈り物や特別な日に最適。</p>
+                            </div>
+                            <div class="tab-pane" data-tab="details">
+                                <p><strong>原料米:</strong> 広島産八反35号</p>
+                                <p><strong>酵母:</strong> 広島令和一号酵母</p>
+                                <p><strong>精米歩合:</strong> 50%</p>
+                                <p><strong>アルコール度数:</strong> 15%</p>
+                                <p><strong>日本酒度:</strong> ＋0.5</p>
+                                <p><strong>酸度:</strong> 1.6</p>
+                                <p><strong>蔵元:</strong> 白牡丹酒造・広島</p>
+                            </div>
+                            <div class="tab-pane" data-tab="taste">
+                                <p><strong>香り:</strong> ジューシーなメロン香</p>
+                                <p><strong>味わい:</strong> 八反35号らしいさっぱりとした後口のキレ</p>
+                                <p><strong>余韻:</strong> 優雅な広がり</p>
+                            </div>
+                            <div class="tab-pane" data-tab="pairing">
+                                <p><strong>おすすめ温度:</strong> よく冷やすか常温で</p>
+                                <p><strong>相性の良い料理:</strong> 魚介、豆腐料理、淡麗な和食</p>
+                                <p><strong>プロコメント:</strong> 洗練された香りとキレの良さが特徴。軽快な和食とのペアリングを重視する方におすすめ。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 純米大吟醸 令和一号酵母 -->
+                <div class="product-card" data-category="premium">
+                    <div class="product-image">
+                        <img src="純米大吟醸 令和一号酵母（れいわいちごうこうぼ）720ml（白牡丹酒造・広島）.JPG" alt="純米大吟醸 令和一号酵母" loading="lazy">
+                    </div>
+                    <div class="product-header">
+                        <h3 class="product-name">純米大吟醸 令和一号酵母</h3>
+                        <p class="product-type">純米大吟醸</p>
+                        <p class="product-description">広島県開発の令和一号酵母で醸造。果実様の香りが特徴の優雅な仕上がり。</p>
+                    </div>
+                    
+                    <a href="sake-detail-template.html?id=reiwa-ichigo" class="product-details-toggle">
+                        詳細を見る <span class="toggle-icon">→</span>
+                    </a>
+                    
+                    <div class="product-details-content">
+                        <div class="product-tabs">
+                            <button class="product-tab-btn active" data-tab="overview">概要</button>
+                            <button class="product-tab-btn" data-tab="details">詳細</button>
+                            <button class="product-tab-btn" data-tab="taste">味わい</button>
+                            <button class="product-tab-btn" data-tab="pairing">楽しみ方</button>
+                        </div>
+                        
+                        <div class="product-tab-content">
+                            <div class="tab-pane active" data-tab="overview">
+                                <p>酒造好適米「山田錦」を精米歩合50％まで磨き、広島県が開発した「令和一号酵母」で醸造。</p>
+                                <p><strong>特徴:</strong> 果実香を主軸に、米の膨らみがしっかり支えるバランス構造。</p>
+                            </div>
+                            <div class="tab-pane" data-tab="details">
+                                <p><strong>原料米:</strong> 山田錦</p>
+                                <p><strong>酵母:</strong> 広島県開発 令和一号酵母</p>
+                                <p><strong>精米歩合:</strong> 50%</p>
+                                <p><strong>蔵元:</strong> 白牡丹酒造・広島</p>
+                            </div>
+                            <div class="tab-pane" data-tab="taste">
+                                <p><strong>香り:</strong> 柔らかなメロンやライチを思わせる果実香</p>
+                                <p><strong>味わい:</strong> 上品な甘みと滑らかな口当たり</p>
+                                <p><strong>後味:</strong> 穏やかな酸が後味を引き締める</p>
+                            </div>
+                            <div class="tab-pane" data-tab="pairing">
+                                <p><strong>おすすめ温度:</strong> 10～12℃程度によく冷やして</p>
+                                <p><strong>相性の良い料理:</strong> 白身魚や貝類の刺身、酒盗、浅漬け</p>
+                                <p><strong>プロコメント:</strong> 開栓直後から立ち上がる香りを楽しみ、一口目から満足感。常温に戻すとさらに甘みと旨みが膨らむ。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. 百黙 純米大吟醸 -->
+                <div class="product-card" data-category="premium">
+                    <div class="product-image">
+                        <img src="百黙 純米大吟醸 720ml（菊正宗・兵庫）.WEBP" alt="百黙 純米大吟醸" loading="lazy">
+                    </div>
+                    <div class="product-header">
+                        <h3 class="product-name">百黙 純米大吟醸</h3>
+                        <p class="product-type">純米大吟醸</p>
+                        <p class="product-description">特A地区山田錦使用。洋梨→プラム→黄桃と続く果実香が魅力。菊正宗の技術が光る逸品。</p>
+                    </div>
+                    
+                    <a href="sake-detail-template.html?id=hyakumoku" class="product-details-toggle">
+                        詳細を見る <span class="toggle-icon">→</span>
+                    </a>
+                    
+                    <div class="product-details-content">
+                        <div class="product-tabs">
+                            <button class="product-tab-btn active" data-tab="overview">概要</button>
+                            <button class="product-tab-btn" data-tab="details">詳細</button>
+                            <button class="product-tab-btn" data-tab="taste">味わい</button>
+                            <button class="product-tab-btn" data-tab="pairing">楽しみ方</button>
+                        </div>
+                        
+                        <div class="product-tab-content">
+                            <div class="tab-pane active" data-tab="overview">
+                                <p>兵庫県三木市吉川町の特A地区山田錦を59％まで磨いた純米大吟醸。契約栽培米と「宮水」使用。</p>
+                                <p><strong>特徴:</strong> 華やかな果実香に、緻密な構成。現代的な純米大吟醸の代表格。</p>
+                            </div>
+                            <div class="tab-pane" data-tab="details">
+                                <p><strong>原料米:</strong> 兵庫県三木市吉川町 特A地区山田錦</p>
+                                <p><strong>精米歩合:</strong> 59%</p>
+                                <p><strong>仕込水:</strong> 宮水</p>
+                                <p><strong>蔵元:</strong> 菊正宗・兵庫</p>
+                            </div>
+                            <div class="tab-pane" data-tab="taste">
+                                <p><strong>香り:</strong> 洋梨→プラム→黄桃と柔らかく続く果実香</p>
+                                <p><strong>味わい:</strong> 旨味と酸のバランスが良く、穏やかでキレのある後口</p>
+                                <p><strong>特徴:</strong> 果実の甘みを想起させつつ酸で締めるスタイル</p>
+                            </div>
+                            <div class="tab-pane" data-tab="pairing">
+                                <p><strong>おすすめ温度:</strong> 8～10℃でフルーティーに、15℃前後で味の厚みが増す</p>
+                                <p><strong>相性の良い料理:</strong> 魚介のカルパッチョ、白身の塩焼き、クリーム系パスタ</p>
+                                <p><strong>プロコメント:</strong> 冷やし方次第で表情を変える柔軟性が◎。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. 百黙 Alt.3（オルトスリー） -->
+                <div class="product-card" data-category="premium">
+                    <div class="product-image">
+                        <img src="百黙 Alt.3（オルトスリー）720ml（菊正宗・兵庫）.JPG" alt="百黙 Alt.3（オルトスリー）" loading="lazy">
+                    </div>
+                    <div class="product-header">
+                        <h3 class="product-name">百黙 Alt.3（オルトスリー）</h3>
+                        <p class="product-type">純米ブレンド</p>
+                        <p class="product-description">「第三の選択」を意味する特別ブレンド。グランクリュ級山田錦の複層的な味わい。</p>
+                    </div>
+                    
+                    <a href="sake-detail-template.html?id=hyakumoku-alt3" class="product-details-toggle">
+                        詳細を見る <span class="toggle-icon">→</span>
+                    </a>
+                    
+                    <div class="product-details-content">
+                        <div class="product-tabs">
+                            <button class="product-tab-btn active" data-tab="overview">概要</button>
+                            <button class="product-tab-btn" data-tab="details">詳細</button>
+                            <button class="product-tab-btn" data-tab="taste">味わい</button>
+                            <button class="product-tab-btn" data-tab="pairing">楽しみ方</button>
+                        </div>
+                        
+                        <div class="product-tab-content">
+                            <div class="tab-pane active" data-tab="overview">
+                                <p>特A地区山田錦による複数の純米原酒を、熟練ブレンダーがブレンドして仕上げた逸品。</p>
+                                <p><strong>コンセプト:</strong> 「第三の選択」を意味する特別なブレンド酒。</p>
+                            </div>
+                            <div class="tab-pane" data-tab="details">
+                                <p><strong>原料米:</strong> 特A地区山田錦（グランクリュ級）</p>
+                                <p><strong>製法:</strong> 複数の純米原酒をブレンド</p>
+                                <p><strong>蔵元:</strong> 菊正宗・兵庫</p>
+                            </div>
+                            <div class="tab-pane" data-tab="taste">
+                                <p><strong>香り:</strong> 華やかでありながら、甘さ・苦味・フレッシュさ・丸みが融合</p>
+                                <p><strong>味わい:</strong> 複層的な味、ブレンドによる味の厚みと複雑性</p>
+                                <p><strong>特徴:</strong> 他の百黙シリーズより引き締まった苦味がアクセント</p>
+                            </div>
+                            <div class="tab-pane" data-tab="pairing">
+                                <p><strong>おすすめ温度:</strong> 冷やしめ（8～12℃）で香りと果実感、常温～15℃で全体のバランス</p>
+                                <p><strong>相性の良い料理:</strong> 生ハム、ナッツ、熟成チーズ</p>
+                                <p><strong>プロコメント:</strong> お酒単体での"余韻を愉しむ"シーンにも映える重量感です。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. 超特撰 惣花 純米大吟醸 -->
+                <div class="product-card" data-category="premium">
+                    <div class="product-image">
+                        <img src="超特撰 惣花（そうか） 純米大吟醸 木箱入り 720ml（永澤酒造・兵庫・吉川町 特A地区山田錦）.jpg" alt="超特撰 惣花（そうか）純米大吟醸" loading="lazy">
+                    </div>
+                    <div class="product-header">
+                        <h3 class="product-name">超特撰 惣花（そうか）純米大吟醸</h3>
+                        <p class="product-type">純米大吟醸</p>
+                        <p class="product-description">特A地区の上質な山田錦使用。木箱入りで贈答にも最適な最高ランク商品。</p>
+                    </div>
+                    
+                    <a href="sake-detail-template.html?id=souka" class="product-details-toggle">
+                        詳細を見る <span class="toggle-icon">→</span>
+                    </a>
+                    
+                    <div class="product-details-content">
+                        <div class="product-tabs">
+                            <button class="product-tab-btn active" data-tab="overview">概要</button>
+                            <button class="product-tab-btn" data-tab="details">詳細</button>
+                            <button class="product-tab-btn" data-tab="taste">味わい</button>
+                            <button class="product-tab-btn" data-tab="pairing">楽しみ方</button>
+                        </div>
+                        
+                        <div class="product-tab-content">
+                            <div class="tab-pane active" data-tab="overview">
+                                <p>特A地区の上質な山田錦を50%以下に磨いて仕込み。木箱入りで贈答にも最適とされる最高ランク商品。</p>
+                                <p><strong>パッケージ:</strong> 高級感のある木箱入り。特別な贈り物に最適。</p>
+                            </div>
+                            <div class="tab-pane" data-tab="details">
+                                <p><strong>原料米:</strong> 特A地区山田錦</p>
+                                <p><strong>精米歩合:</strong> 50%以下</p>
+                                <p><strong>蔵元:</strong> 永澤酒造・兵庫</p>
+                                <p><strong>パッケージ:</strong> 木箱入り</p>
+                            </div>
+                            <div class="tab-pane" data-tab="taste">
+                                <p><strong>香り:</strong> 白桃やマスカットの上品な香り</p>
+                                <p><strong>味わい:</strong> キレの良い酸味がありつつ丸く甘い余韻</p>
+                                <p><strong>特徴:</strong> 無駄のない構成と透明感、しかし重量感ある口当たりのギャップ</p>
+                            </div>
+                            <div class="tab-pane" data-tab="pairing">
+                                <p><strong>おすすめ温度:</strong> 8〜12℃に冷やして</p>
+                                <p><strong>相性の良い料理:</strong> てんぷら、お造り、白身魚</p>
+                                <p><strong>プロコメント:</strong> 贈答用ゆえの上質さを感じさせる一本。ワイングラスでじっくり楽しむのが◎。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. 純米大吟醸 生酒 -->
+                <div class="product-card" data-category="limited">
+                    <div class="product-image">
+                        <img src="純米大吟醸 生酒 720ml.jpg" alt="純米大吟醸 生酒" loading="lazy">
+                    </div>
+                    <div class="product-header">
+                        <h3 class="product-name">純米大吟醸 生酒</h3>
+                        <p class="product-type">純米大吟醸生酒</p>
+                        <p class="product-description">青リンゴ・洋梨の香り、爽やかな甘さが特徴。フレッシュで瑞々しい生酒の魅力。</p>
+                    </div>
+                    
+                    <a href="sake-detail-template.html?id=nama" class="product-details-toggle">
+                        詳細を見る <span class="toggle-icon">→</span>
+                    </a>
+                    
+                    <div class="product-details-content">
+                        <div class="product-tabs">
+                            <button class="product-tab-btn active" data-tab="overview">概要</button>
+                            <button class="product-tab-btn" data-tab="details">詳細</button>
+                            <button class="product-tab-btn" data-tab="taste">味わい</button>
+                            <button class="product-tab-btn" data-tab="pairing">楽しみ方</button>
+                        </div>
+                        
+                        <div class="product-tab-content">
+                            <div class="tab-pane active" data-tab="overview">
+                                <p>火入れを行わない生酒ならではのフレッシュで瑞々しい香り。控えめな甘と酸のバランスが特徴。</p>
+                                <p><strong>特徴:</strong> フレッシュさと透明感が際立つ軽やかな生酒。</p>
+                            </div>
+                            <div class="tab-pane" data-tab="details">
+                                <p><strong>タイプ:</strong> 純米大吟醸生酒</p>
+                                <p><strong>特徴:</strong> 火入れなし、要冷蔵</p>
+                            </div>
+                            <div class="tab-pane" data-tab="taste">
+                                <p><strong>香り:</strong> 青リンゴや洋梨を彷彿とさせるフレッシュで瑞々しい香り</p>
+                                <p><strong>味わい:</strong> 控えめな甘味と酸のバランス</p>
+                                <p><strong>特徴:</strong> 酸味と甘味、どちらにも寄りすぎず中庸に整った軽やかさ</p>
+                            </div>
+                            <div class="tab-pane" data-tab="pairing">
+                                <p><strong>おすすめ温度:</strong> やや低温で、生酒ならではの爽快さを引き立てて</p>
+                                <p><strong>相性の良い料理:</strong> 春夏の魚介、フルーツ系デザート、和洋折衷の軽食</p>
+                                <p><strong>プロコメント:</strong> 日常に取り入れやすいバランス型。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. 龍が如く 純米大吟醸 無濾過原酒 -->
+                <div class="product-card" data-category="limited">
+                    <div class="product-image">
+                        <img src="純米大吟醸 無濾過原酒　龍が如く（土佐鶴酒造・高知.jpg" alt="龍が如く 純米大吟醸 無濾過原酒" loading="lazy">
+                    </div>
+                    <div class="product-header">
+                        <h3 class="product-name">龍が如く 純米大吟醸 無濾過原酒</h3>
+                        <p class="product-type">純米大吟醸無濾過原酒</p>
+                        <p class="product-description">全国新酒鑑評会で最多49回金賞の土佐鶴。しぼりたての味をそのまま封じ込めた力強い一本。</p>
+                    </div>
+                    
+                    <a href="sake-detail-template.html?id=ryugagotoku" class="product-details-toggle">
+                        詳細を見る <span class="toggle-icon">→</span>
+                    </a>
+                    
+                    <div class="product-details-content">
+                        <div class="product-tabs">
+                            <button class="product-tab-btn active" data-tab="overview">概要</button>
+                            <button class="product-tab-btn" data-tab="details">詳細</button>
+                            <button class="product-tab-btn" data-tab="taste">味わい</button>
+                            <button class="product-tab-btn" data-tab="pairing">楽しみ方</button>
+                        </div>
+                        
+                        <div class="product-tab-content">
+                            <div class="tab-pane active" data-tab="overview">
+                                <p>酒造好適米を50%以下に精米、無濾過原酒のため加水なし、しぼりたての味をそのまま封じ込め。</p>
+                                <p><strong>蔵元実績:</strong> 全国新酒鑑評会で最多49回金賞を誇る土佐鶴の代表格。</p>
+                            </div>
+                            <div class="tab-pane" data-tab="details">
+                                <p><strong>原料米:</strong> 酒造好適米</p>
+                                <p><strong>精米歩合:</strong> 50%以下</p>
+                                <p><strong>製法:</strong> 無濾過原酒（加水なし）</p>
+                                <p><strong>蔵元:</strong> 土佐鶴酒造・高知</p>
+                            </div>
+                            <div class="tab-pane" data-tab="taste">
+                                <p><strong>香り:</strong> 麹の厚みとお米の甘味が豊か</p>
+                                <p><strong>味わい:</strong> 無濾過ならではのふくらみある旨味に、酸味と若干の苦味が混ざり厚みある味わい</p>
+                                <p><strong>特徴:</strong> ダイナミックな味わいと余韻</p>
+                            </div>
+                            <div class="tab-pane" data-tab="pairing">
+                                <p><strong>おすすめ温度:</strong> 12〜15℃でじっくりと</p>
+                                <p><strong>相性の良い料理:</strong> 脂のある刺身や焼き魚（サバ、ブリ）、味噌仕立ての煮物</p>
+                                <p><strong>プロコメント:</strong> 開栓直後は荒さ感じるかもしれませんが、数日経つと丸くなり深みが増します。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. アジュール 吟醸酒 -->
+                <div class="product-card" data-category="classic">
+                    <div class="product-image">
+                        <img src="吟醸酒 アジュール 720ml（土佐鶴酒造・高知）.jpg" alt="吟醸酒 アジュール" loading="lazy">
+                    </div>
+                    <div class="product-header">
+                        <h3 class="product-name">吟醸酒 アジュール</h3>
+                        <p class="product-type">吟醸酒</p>
+                        <p class="product-description">青いボトルが美しい軽やかなドライ感。azure（群青色）を思わせる爽快な味わい。</p>
+                    </div>
+                    
+                    <a href="sake-detail-template.html?id=azure" class="product-details-toggle">
+                        詳細を見る <span class="toggle-icon">→</span>
+                    </a>
+                    
+                    <div class="product-details-content">
+                        <div class="product-tabs">
+                            <button class="product-tab-btn active" data-tab="overview">概要</button>
+                            <button class="product-tab-btn" data-tab="details">詳細</button>
+                            <button class="product-tab-btn" data-tab="taste">味わい</button>
+                            <button class="product-tab-btn" data-tab="pairing">楽しみ方</button>
+                        </div>
+                        
+                        <div class="product-tab-content">
+                            <div class="tab-pane active" data-tab="overview">
+                                <p>吟醸規格、アルコール度13%台で軽やかなドライ感、青いボトルが特徴的。</p>
+                                <p><strong>蔵元実績:</strong> 土佐鶴は最多49回金賞受賞の実力蔵。本品もその品質を継承。</p>
+                            </div>
+                            <div class="tab-pane" data-tab="details">
+                                <p><strong>タイプ:</strong> 吟醸酒</p>
+                                <p><strong>アルコール度数:</strong> 13%台</p>
+                                <p><strong>蔵元:</strong> 土佐鶴酒造・高知</p>
+                                <p><strong>特徴:</strong> 青いボトルの美しいデザイン</p>
+                            </div>
+                            <div class="tab-pane" data-tab="taste">
+                                <p><strong>香り:</strong> azure（群青色）を思わせる爽快な青リンゴ、白ブドウの香り</p>
+                                <p><strong>味わい:</strong> スッキリとした余韻、シャープなキレ</p>
+                                <p><strong>特徴:</strong> 氷水に浮かべても似合うシャープなキレ</p>
+                            </div>
+                            <div class="tab-pane" data-tab="pairing">
+                                <p><strong>おすすめ温度:</strong> しっかり冷やして</p>
+                                <p><strong>相性の良い料理:</strong> 魚のマリネ、寿司、軽い前菜やサラダ</p>
+                                <p><strong>プロコメント:</strong> 夏場の爽酒として最適で、和だけでなく軽い洋食にも馴染むデザイン性と味わい。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. 李白 純米吟醸 Wandering Poet -->
+                <div class="product-card" data-category="classic">
+                    <div class="product-image">
+                        <img src="李白（りはく） 純米吟醸 "Wandering Poet"（李白酒造・島根）.jpg" alt="李白（りはく）純米吟醸 Wandering Poet" loading="lazy">
+                    </div>
+                    <div class="product-header">
+                        <h3 class="product-name">李白（りはく）純米吟醸 "Wandering Poet"</h3>
+                        <p class="product-type">純米吟醸</p>
+                        <p class="product-description">世界各国で愛飲される島根を代表する酒。バランス型で米の旨味が主軸の実直な味わい。</p>
+                    </div>
+                    
+                    <a href="sake-detail-template.html?id=rihaku" class="product-details-toggle">
+                        詳細を見る <span class="toggle-icon">→</span>
+                    </a>
+                    
+                    <div class="product-details-content">
+                        <div class="product-tabs">
+                            <button class="product-tab-btn active" data-tab="overview">概要</button>
+                            <button class="product-tab-btn" data-tab="details">詳細</button>
+                            <button class="product-tab-btn" data-tab="taste">味わい</button>
+                            <button class="product-tab-btn" data-tab="pairing">楽しみ方</button>
+                        </div>
+                        
+                        <div class="product-tab-content">
+                            <div class="tab-pane active" data-tab="overview">
+                                <p>純米吟醸規格、島根県産米使用。海外市場でも定評のあるシリーズ。</p>
+                                <p><strong>グローバル展開:</strong> 世界各国で愛飲されている島根を代表する酒の一つ。</p>
+                            </div>
+                            <div class="tab-pane" data-tab="details">
+                                <p><strong>タイプ:</strong> 純米吟醸</p>
+                                <p><strong>原料米:</strong> 島根県産米</p>
+                                <p><strong>蔵元:</strong> 李白酒造・島根</p>
+                            </div>
+                            <div class="tab-pane" data-tab="taste">
+                                <p><strong>香り:</strong> バランス型で果実香よりもお米由来の旨味が主軸</p>
+                                <p><strong>味わい:</strong> まろやかさとすっきり感が共存</p>
+                                <p><strong>特徴:</strong> 過度に主張しないため、食卓のメインからご飯にまで違和感なく寄り添う</p>
+                            </div>
+                            <div class="tab-pane" data-tab="pairing">
+                                <p><strong>おすすめ温度:</strong> 常温〜室温で飲むと米の旨味が際立つ</p>
+                                <p><strong>相性の良い料理:</strong> 和食全般（煮魚、キノコ料理）、家庭的な食事</p>
+                                <p><strong>プロコメント:</strong> グローバルでも通用するバランス力。実直な味わいが◎。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="story">
+        <div class="container">
+            <h2>こだわり</h2>
+            <div class="story-content">
+                <h3>唎酒師ガイドの専門性</h3>
+                <p id="storyText">yodobloom SAKEでは、認定唎酒師®がお客様一人一人の好みに合わせて、個人化された日本酒推薦体験を提供します。季節ごとに厳選された100種類の日本酒から、あなたにぴったりの一本を見つけます。</p>
+                
+                <h3>100種類の季節限定セレクション</h3>
+                <p>全国の優秀な酒蔵から季節ごとに厳選した100種類の日本酒をご用意。純米大吟醸から特別限定酒まで、毎季節新しい発見があります。</p>
+                
+                <h3>アプリ連動の革新的体験</h3>
+                <p>モバイルアプリと連動した革新的な酒チャレンジで、あなたの日本酒知識を深めながら楽しめます。大阪・梅田というアクセス抜群の立地で、日本酒の新しい世界を体験してください。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Sakura Section -->
+    <section id="ai-sakura" class="ai-sakura-section">
+        <div class="container">
+            <h2>AIサポートに聞いてみよう</h2>
+            <div class="ai-sakura-intro">
+                <div class="ai-sakura-avatar">
+                    <img src="ai-sakura-icon.png" alt="yodobloom AIサポート" class="sakura-icon">
+                    <div class="sakura-glow"></div>
+                </div>
+                <div class="ai-sakura-content">
+                    <h3>yodobloom SAKE専門AIアシスタント</h3>
+                    <p>こんにちは！yodobloom SAKE AIサポートです🍶 日本酒テーマパークや唳酒師ガイド付き体験について、何でもお気軽にお聞きください。12言語に対応した高品質な回答をお届けします。</p>
+                    <div class="ai-features">
+                        <div class="ai-feature">
+                            <span class="feature-icon">🍶</span>
+                            <span>唳酒師専門知識</span>
+                        </div>
+                        <div class="ai-feature">
+                            <span class="feature-icon">🏔️</span>
+                            <span>テーマパーク情報</span>
+                        </div>
+                        <div class="ai-feature">
+                            <span class="feature-icon">🌍</span>
+                            <span>12言語対応</span>
+                        </div>
+                        <div class="ai-feature">
+                            <span class="feature-icon">🎓</span>
+                            <span>高品質な回答</span>
+                        </div>
+                    </div>
+                    <button class="start-chat-btn" onclick="openAISakuraChat()" id="mainChatButton">
+                        AIさくらとチャットを始める
+                        <span class="chat-icon">💬</span>
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Modern AI Sakura Chat System -->
+    <div id="chatInterface" class="modern-chat-interface">
+        <div class="chat-header">
+            <div class="chat-avatar-section">
+                <div class="avatar-container">
+                    <img src="ai-sakura-icon.png" alt="AIさくら" class="chat-avatar">
+                    <div class="status-indicator"></div>
+                </div>
+                <div class="chat-info">
+                    <h3>AIサポート</h3>
+                    <p class="status-text">オンライン • yodobloom SAKE</p>
+                </div>
+            </div>
+            <div class="chat-actions">
+                <button class="minimize-btn" id="minimizeChat">−</button>
+                <button class="close-btn" id="closeChat">×</button>
+            </div>
+        </div>
+        
+        <div id="chatMessages" class="chat-messages">
+            <div class="welcome-message">
+                <div class="avatar-mini">
+                    <img src="ai-sakura-icon.png" alt="yodobloom AIサポート">
+                </div>
+                <div class="message-bubble ai-bubble">
+                    <p>こんにちは！yodobloom SAKE AIサポートです🌸</p>
+                    <p>日本酒テーマパークについて何でもお聞きください！</p>
+                    <div class="message-time">今すぐ</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="quick-actions">
+            <button class="quick-btn" data-message="yodobloom SAKEについて教えて">🏪 テーマパークについて</button>
+            <button class="quick-btn" data-message="唳酒師ガイド付き試飲について教えて">🍶 唳酒師ガイド</button>
+            <button class="quick-btn" data-message="100種類の日本酒について教えて">⭐ 100種類の日本酒</button>
+        </div>
+        
+        <div class="chat-input-area">
+            <div class="input-container">
+                <input type="text" id="messageInput" placeholder="メッセージを入力..." maxlength="500" autocomplete="off">
+                <button id="sendButton" class="send-btn">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="currentColor" d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="input-footer">
+                <span class="language-indicator">🌐 日本語</span>
+                <span class="ai-indicator">🤖 GPT-4 + DeepL Ready</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stylish Floating Chat Button -->
+    <button id="chatButton" class="modern-chat-button">
+        <div class="button-content">
+            <div class="avatar-wrapper">
+                <img src="ai-sakura-icon.png" alt="yodobloom AIサポート" class="button-avatar">
+                <div class="pulse-ring"></div>
+                <div class="notification-dot"></div>
+            </div>
+            <div class="button-text">
+                <span class="main-text">AIサポート</span>
+                <span class="sub-text">チャットする</span>
+            </div>
+        </div>
+        <div class="floating-particles">
+            <span class="particle">🍶</span>
+            <span class="particle">✨</span>
+            <span class="particle">🍶</span>
+        </div>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>yodobloom SAKE</h3>
+                    <p>日本酒テーマパーク - 大阪・北区</p>
+                </div>
+                <div class="footer-info">
+                    <h4>お問い合わせ</h4>
+                    <p id="contactPhone">06-4802-1010</p>
+                    <p id="contactAddress">大阪市北区大深町1-1 2階</p>
+                    <p><a href="https://yodobloom.com" target="_blank">公式サイト</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="config/ai-config.js"></script>
+    <script src="js/company-manager.js"></script>
+    <script src="js/language-selector.js"></script>
+    <script src="js/modern-chatbot.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'ja',
+                includedLanguages: 'ja,en,zh-cn,zh-tw,ko,th,vi,fr,es,de,it,pt',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <!-- yodobloom SAKE Initialization -->
+    <script>
+        // yodobloom SAKE専用の初期化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 企業情報を設定
+            window.companyData = {
+                company: {
+                    name: 'yodobloom SAKE (ヨドブルーム サケ)',
+                    description: '季節ごとに厳選された１００種類の日本酒を試飲しながら、唎酒師®がガイドしてくれる日本酒テーマパークです。個人の好みに合わせたカスタマイズされた日本酒推薦体験とアプリベースの酒チャレンジを提供しています。',
+                    location: '大阪市北区大深町',
+                    address: '大阪市北区大深町1-1 2階',
+                    phone: '06-4802-1010',
+                    motto: '季節ごとに厳選された１００種類の日本酒テーマパーク',
+                    features: ['唎酒師ガイド付き', 'アプリ連動', '個人化推薦', '100種類季節限定']
+                },
+                businessType: 'sake_theme_park',
+                specialties: ['唎酒師ガイド付き試飲', 'カスタマイズ推薦', '季節限定100種類'],
+                websiteUrl: 'https://yodobloom.com'
+            };
+            
+            // AI企業専用設定
+            if (window.aiConfig) {
+                window.aiConfig.company = {
+                    id: 'yodobloom_sake',
+                    name: 'yodobloom SAKE',
+                    businessType: 'sake_theme_park',
+                    specialties: ['唎酒師ガイド付き試飲', 'カスタマイズ推薦', '季節限定100種類', 'アプリ連動'],
+                    allowedTopics: ['yodobloom SAKE', '日本酒テーマパーク', '唎酒師', '大阪', '北区', '日本酒', '試飲体験', 'アプリ'],
+                    blockedCompanies: [] // 他社情報は一切回答しない
+                };
+            }
+        });
+    </script>
+</body>
+</html>
