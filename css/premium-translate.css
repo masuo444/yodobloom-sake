@@ -431,56 +431,109 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .premium-translate-container {
-        top: 70px;
+        top: 16px;
         right: 16px;
-        z-index: 9999;
+        z-index: 999999;
+        position: fixed !important;
     }
     
     .language-toggle-btn {
-        padding: 10px 12px;
-        font-size: 13px;
-        min-width: 120px;
+        padding: 8px 12px;
+        font-size: 12px;
+        min-width: 100px;
+        background: rgba(255, 255, 255, 0.98) !important;
+        border: 2px solid rgba(255, 182, 193, 0.8) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
     }
     
     .language-dropdown-premium {
-        min-width: 280px;
-        max-width: calc(100vw - 32px);
+        min-width: 300px;
+        max-width: calc(100vw - 20px);
         right: 0;
-        z-index: 9999;
+        z-index: 999999;
+        position: absolute !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(20px);
+        border: 2px solid rgba(255, 182, 193, 0.5) !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
     }
     
     .language-grid {
-        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-        gap: 6px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
     }
     
     .language-option-premium {
-        padding: 8px 10px;
-        font-size: 12px;
+        padding: 12px 10px;
+        font-size: 13px;
+        background: rgba(255, 255, 255, 0.9) !important;
+        border: 1px solid rgba(255, 182, 193, 0.3) !important;
+        transition: all 0.2s ease;
+    }
+    
+    .language-option-premium:hover {
+        background: rgba(255, 182, 193, 0.2) !important;
+        transform: translateY(-1px);
     }
     
     .translation-suggestion {
-        left: 16px;
-        right: 16px;
-        bottom: 16px;
+        left: 10px;
+        right: 10px;
+        bottom: 20px;
         max-width: none;
-        z-index: 9998;
+        z-index: 999998;
     }
     
     .translation-status {
-        left: 16px;
-        right: 16px;
+        left: 10px;
+        right: 10px;
+        top: 80px;
         transform: translateY(-100px);
-        z-index: 9998;
+        z-index: 999998;
     }
     
     .translation-status.active {
         transform: translateY(0);
     }
     
-    /* モバイルメニューとの競合を避ける */
-    .mobile-menu-overlay.active ~ .premium-translate-container {
-        display: none;
+    /* モバイルメニューとの競合を完全に解消 */
+    .mobile-menu-overlay.active ~ * .premium-translate-container {
+        z-index: 10 !important;
+    }
+    
+    /* モバイル専用の翻訳ボタンスタイル */
+    .language-toggle-btn::before {
+        content: '🌐';
+        font-size: 16px;
+        margin-right: 4px;
+    }
+    
+    /* タッチ対応の改善 */
+    .language-option-premium {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* 小さなスマートフォン対応 */
+    @media (max-width: 480px) {
+        .language-dropdown-premium {
+            min-width: 280px;
+            max-width: calc(100vw - 16px);
+            right: -4px;
+        }
+        
+        .language-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .language-option-premium {
+            padding: 14px 12px;
+            font-size: 14px;
+        }
     }
 }
 
