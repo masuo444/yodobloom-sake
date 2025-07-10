@@ -350,6 +350,12 @@ class GlobalTranslate {
         window.googleTranslateElementInit = () => {
             if (typeof google !== 'undefined' && google.translate) {
                 try {
+                    // 既存の翻訳要素を削除
+                    const existingGoogleBar = document.querySelector('.goog-te-banner-frame');
+                    if (existingGoogleBar) {
+                        existingGoogleBar.remove();
+                    }
+                    
                     new google.translate.TranslateElement({
                         pageLanguage: 'ja',
                         includedLanguages: Object.keys(this.languages).join(','),
@@ -357,10 +363,25 @@ class GlobalTranslate {
                         autoDisplay: false
                     }, 'google_translate_element');
                     
-                    console.log('✅ Google Translate initialized with all languages');
+                    // 翻訳準備完了の確認
+                    setTimeout(() => {
+                        const selectElement = document.querySelector('.goog-te-combo');
+                        if (selectElement) {
+                            console.log('✅ Google Translate ready and functional');
+                            this.showTranslationReady();
+                        } else {
+                            console.warn('⚠️ Google Translate select not found, retrying...');
+                            setTimeout(() => window.googleTranslateElementInit(), 1000);
+                        }
+                    }, 1000);
+                    
                 } catch (error) {
                     console.error('Google Translate initialization error:', error);
+                    this.showTranslationError();
                 }
+            } else {
+                console.warn('Google Translate API not loaded, retrying...');
+                setTimeout(() => window.googleTranslateElementInit(), 2000);
             }
         };
         
@@ -429,6 +450,24 @@ class GlobalTranslate {
         
         this.currentLanguage = langCode;
         console.log(`🌍 Language changed to: ${lang.name}`);
+    }
+    
+    showTranslationReady() {
+        // 翻訳準備完了の表示
+        const btn = document.getElementById('globalTranslateBtn');
+        if (btn) {
+            btn.style.borderColor = '#28a745';
+            btn.title = '翻訳機能が利用可能です';
+        }
+    }
+    
+    showTranslationError() {
+        // 翻訳エラーの表示
+        const btn = document.getElementById('globalTranslateBtn');
+        if (btn) {
+            btn.style.borderColor = '#dc3545';
+            btn.title = '翻訳機能の読み込みに失敗しました';
+        }
     }
     
     detectUserLanguage() {

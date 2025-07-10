@@ -115,6 +115,7 @@ class EnhancedChatbot {
                     </div>
                     <div class="input-footer">
                         <span class="lang-indicator">🌐 日本語対応</span>
+                        <span class="send-hint">Ctrl+Enter で送信</span>
                         <span class="char-counter"><span id="charCount">0</span>/1000</span>
                     </div>
                 </div>
@@ -489,6 +490,11 @@ class EnhancedChatbot {
                 color: #6c757d;
             }
             
+            .send-hint {
+                color: #007bff;
+                font-weight: 500;
+            }
+            
             .char-counter {
                 color: #6c757d;
             }
@@ -544,10 +550,15 @@ class EnhancedChatbot {
         });
         
         chatInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
+            if (e.key === 'Enter' && e.ctrlKey) {
+                // Ctrl+Enterで送信
                 e.preventDefault();
                 this.sendMessage();
+            } else if (e.key === 'Enter' && e.shiftKey) {
+                // Shift+Enterで改行（デフォルト動作）
+                // 何もしない（改行される）
             }
+            // 通常のEnterは改行のみ
         });
         
         // 文字数カウント
