@@ -89,14 +89,6 @@ class EnhancedChatbot {
                     </div>
                 </div>
                 
-                <div class="quick-questions" id="quickQuestions">
-                    <div class="quick-title">よくある質問:</div>
-                    <div class="quick-buttons">
-                        ${this.quickQuestions.ja.map(q => `
-                            <button class="quick-btn" data-question="${q}">${q}</button>
-                        `).join('')}
-                    </div>
-                </div>
                 
                 <div class="typing-indicator" id="typingIndicator" style="display: none;">
                     <div class="typing-avatar">
@@ -391,41 +383,6 @@ class EnhancedChatbot {
                 color: rgba(255, 255, 255, 0.8);
             }
             
-            .quick-questions {
-                padding: 16px 20px;
-                border-top: 1px solid #e9ecef;
-                background: white;
-            }
-            
-            .quick-title {
-                font-size: 12px;
-                font-weight: 600;
-                color: #6c757d;
-                margin-bottom: 8px;
-            }
-            
-            .quick-buttons {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 6px;
-            }
-            
-            .quick-btn {
-                background: #f8f9fa;
-                border: 1px solid #e9ecef;
-                border-radius: 16px;
-                padding: 6px 12px;
-                font-size: 11px;
-                cursor: pointer;
-                transition: all 0.2s ease;
-                color: #495057;
-            }
-            
-            .quick-btn:hover {
-                background: #007bff;
-                border-color: #007bff;
-                color: white;
-            }
             
             .typing-indicator {
                 display: flex;
@@ -554,16 +511,6 @@ class EnhancedChatbot {
                     max-height: 600px;
                 }
                 
-                .quick-buttons {
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    gap: 8px;
-                }
-                
-                .quick-btn {
-                    text-align: left;
-                    padding: 10px 12px;
-                }
             }
         `;
         
@@ -577,7 +524,6 @@ class EnhancedChatbot {
         const closeBtn = document.getElementById('closeChat');
         const sendBtn = document.getElementById('sendMessage');
         const chatInput = document.getElementById('chatInput');
-        const quickBtns = document.querySelectorAll('.quick-btn');
         
         // チャット開閉
         chatBtn.addEventListener('click', () => {
@@ -614,14 +560,6 @@ class EnhancedChatbot {
             chatInput.style.height = Math.min(chatInput.scrollHeight, 100) + 'px';
         });
         
-        // クイック質問
-        quickBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const question = btn.dataset.question;
-                chatInput.value = question;
-                this.sendMessage();
-            });
-        });
     }
     
     addKeyboardShortcuts() {
