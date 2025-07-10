@@ -431,8 +431,9 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .premium-translate-container {
-        top: 16px;
+        top: 70px;
         right: 16px;
+        z-index: 9999;
     }
     
     .language-toggle-btn {
@@ -445,6 +446,7 @@
         min-width: 280px;
         max-width: calc(100vw - 32px);
         right: 0;
+        z-index: 9999;
     }
     
     .language-grid {
@@ -462,16 +464,23 @@
         right: 16px;
         bottom: 16px;
         max-width: none;
+        z-index: 9998;
     }
     
     .translation-status {
         left: 16px;
         right: 16px;
         transform: translateY(-100px);
+        z-index: 9998;
     }
     
     .translation-status.active {
         transform: translateY(0);
+    }
+    
+    /* モバイルメニューとの競合を避ける */
+    .mobile-menu-overlay.active ~ .premium-translate-container {
+        display: none;
     }
 }
 
