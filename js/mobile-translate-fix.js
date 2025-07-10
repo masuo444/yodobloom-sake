@@ -246,31 +246,59 @@ class MobileTranslateFix {
             document.body.appendChild(googleTranslateDiv);
         }
         
-        // Google Translate初期化
+        // 既存の初期化関数をバックアップ
+        const existingInit = window.googleTranslateElementInit;
+        
+        // Google Translate初期化 - 重複チェック付き
         window.googleTranslateElementInit = () => {
-            if (typeof google !== 'undefined' && google.translate) {
-                new google.translate.TranslateElement({
-                    pageLanguage: 'ja',
-                    includedLanguages: 'ja,en,zh-cn,zh-tw,ko,fr,es,de',
-                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                    autoDisplay: false
-                }, 'google_translate_element');
-                
-                console.log('✅ Google Translate initialized for mobile');
+            try {
+                if (typeof google !== 'undefined' && google.translate) {
+                    // 既存のTranslateElementがある場合はスキップ
+                    if (document.querySelector('.goog-te-combo')) {
+                        console.log('✅ Google Translate already initialized');
+                        return;
+                    }
+                    
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'ja',
+                        includedLanguages: 'ja,en,zh-cn,zh-tw,ko,fr,es,de',
+                        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                        autoDisplay: false
+                    }, 'google_translate_element');
+                    
+                    console.log('✅ Google Translate initialized for mobile');
+                } else if (existingInit && typeof existingInit === 'function') {
+                    // 既存の初期化関数を実行
+                    existingInit();
+                }
+            } catch (error) {
+                console.warn('Google Translate initialization failed:', error);
+                if (existingInit && typeof existingInit === 'function') {
+                    try {
+                        existingInit();
+                    } catch (fallbackError) {
+                        console.warn('Fallback Google Translate initialization also failed:', fallbackError);
+                    }
+                }
             }
         };
         
-        // Google Translateスクリプトを読み込み
+        // Google Translateスクリプトを読み込み - 重複チェック付き
         if (!document.querySelector('script[src*="translate.google.com"]')) {
             const script = document.createElement('script');
             script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
             script.async = true;
+            script.onerror = () => {
+                console.warn('Failed to load Google Translate script');
+            };
             document.head.appendChild(script);
         } else {
-            // 既にスクリプトが読み込まれている場合
-            if (typeof google !== 'undefined' && google.translate) {
-                window.googleTranslateElementInit();
-            }
+            // 既にスクリプトが読み込まれている場合は少し待ってから初期化
+            setTimeout(() => {
+                if (typeof google !== 'undefined' && google.translate) {
+                    window.googleTranslateElementInit();
+                }
+            }, 100);
         }
     }
     
@@ -331,11 +359,44 @@ class MobileTranslateFix {
         this.currentLanguage = langCode;
         console.log(`🌐 Language changed to: ${lang.name}`);
     }
+    
+    /**
+     * Cleanup method to prevent memory leaks
+     */
+    destroy() {
+        // Remove event listeners
+        const btn = document.getElementById('mobileTranslateBtn');
+        const closeBtn = document.getElementById('mobileCloseBtn');
+        const langOptions = document.querySelectorAll('.mobile-lang-option');
+        
+        if (btn) {
+            btn.removeEventListener('click', this.btnClickHandler);
+        }
+        if (closeBtn) {
+            closeBtn.removeEventListener('click', this.closeBtnHandler);
+        }
+        
+        langOptions.forEach(option => {
+            option.removeEventListener('click', this.langOptionHandler);
+        });
+        
+        document.removeEventListener('click', this.documentClickHandler);
+        
+        // Remove UI
+        const container = document.querySelector('.mobile-translate-container');
+        if (container) {
+            container.remove();
+        }
+        
+        // Clear references
+        this.isInitialized = false;
+        console.log('✅ Mobile Translate Fix destroyed');
+    }
 }
 
-// モバイルデバイスの場合のみ初期化
-document.addEventListener('DOMContentLoaded', () => {
-    if (window.innerWidth <= 768) {
+// モバイルデバイスの場合のみ初期化 - 重複チェック付き
+function initializeMobileTranslateFix() {
+    if (window.innerWidth <= 768 && !window.mobileTranslateFix) {
         try {
             window.mobileTranslateFix = new MobileTranslateFix();
             console.log('✅ Mobile Translate Fix loaded successfully');
@@ -343,18 +404,43 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('❌ Failed to load Mobile Translate Fix:', error);
         }
     }
-});
+}
 
-// リサイズイベントでモバイル対応を動的に切り替え
+// DOMContentLoaded時に初期化を試行
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeMobileTranslateFix);
+} else {
+    // 既にDOMがロードされている場合は即座に実行
+    initializeMobileTranslateFix();
+}
+
+// リサイズイベントでモバイル対応を動的に切り替え - デバウンス付き
+let resizeTimeout;
 window.addEventListener('resize', () => {
-    const isMobile = window.innerWidth <= 768;
-    if (isMobile && !window.mobileTranslateFix) {
-        window.mobileTranslateFix = new MobileTranslateFix();
-    } else if (!isMobile && window.mobileTranslateFix) {
-        const mobileContainer = document.querySelector('.mobile-translate-container');
-        if (mobileContainer) {
-            mobileContainer.remove();
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        const isMobile = window.innerWidth <= 768;
+        const hasInstance = window.mobileTranslateFix && window.mobileTranslateFix.isInitialized;
+        
+        if (isMobile && !hasInstance) {
+            try {
+                window.mobileTranslateFix = new MobileTranslateFix();
+            } catch (error) {
+                console.warn('MobileTranslateFix initialization failed:', error);
+            }
+        } else if (!isMobile && hasInstance) {
+            try {
+                const mobileContainer = document.querySelector('.mobile-translate-container');
+                if (mobileContainer) {
+                    mobileContainer.remove();
+                }
+                if (window.mobileTranslateFix && typeof window.mobileTranslateFix.destroy === 'function') {
+                    window.mobileTranslateFix.destroy();
+                }
+                window.mobileTranslateFix = null;
+            } catch (error) {
+                console.warn('MobileTranslateFix cleanup failed:', error);
+            }
         }
-        window.mobileTranslateFix = null;
-    }
+    }, 250); // デバウンス: 250ms
 });

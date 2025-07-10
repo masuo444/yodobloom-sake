@@ -689,53 +689,48 @@ class YodobloomSAKE {
         
         let lastScrollY = window.scrollY;
         let isScrolling = false;
+        let ticking = false;
         
         const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            const windowHeight = window.innerHeight;
-            const documentHeight = document.documentElement.scrollHeight;
-            const footerHeight = 100; // フッターのチャットボタン用スペース
+            if (ticking) return;
             
-            // フッター付近にいるかチェック
-            const isNearFooter = (currentScrollY + windowHeight) >= (documentHeight - footerHeight);
-            
-            // スクロール方向を検出
-            const isScrollingDown = currentScrollY > lastScrollY;
-            
-            if (isNearFooter) {
-                // フッター付近では少し控えめに表示
-                chatButton.classList.add('hide-on-bottom');
-            } else {
-                chatButton.classList.remove('hide-on-bottom');
-            }
-            
-            // スクロール時にチャットボタンを一時的に小さくする
-            if (!isScrolling) {
-                chatButton.style.transform = 'scale(0.9)';
-                isScrolling = true;
+            ticking = true;
+            requestAnimationFrame(() => {
+                const currentScrollY = window.scrollY;
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                const footerHeight = 100; // フッターのチャットボタン用スペース
                 
-                // スクロール停止時に元のサイズに戻す
-                clearTimeout(this.scrollTimeout);
-                this.scrollTimeout = setTimeout(() => {
-                    chatButton.style.transform = '';
-                    isScrolling = false;
-                }, 150);
-            }
-            
-            lastScrollY = currentScrollY;
+                // フッター付近にいるかチェック
+                const isNearFooter = (currentScrollY + windowHeight) >= (documentHeight - footerHeight);
+                
+                if (isNearFooter) {
+                    // フッター付近では少し控えめに表示
+                    chatButton.classList.add('hide-on-bottom');
+                } else {
+                    chatButton.classList.remove('hide-on-bottom');
+                }
+                
+                // スクロール時にチャットボタンを一時的に小さくする（モバイルでのパフォーマンス向上）
+                if (!isScrolling && window.innerWidth > 768) { // デスクトップのみ
+                    chatButton.style.transform = 'scale(0.9)';
+                    isScrolling = true;
+                    
+                    // スクロール停止時に元のサイズに戻す
+                    clearTimeout(this.scrollTimeout);
+                    this.scrollTimeout = setTimeout(() => {
+                        chatButton.style.transform = '';
+                        isScrolling = false;
+                    }, 150);
+                }
+                
+                lastScrollY = currentScrollY;
+                ticking = false;
+            });
         };
         
-        // スクロールイベントをスロットル
-        let ticking = false;
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(handleScroll);
-                ticking = true;
-                setTimeout(() => {
-                    ticking = false;
-                }, 16); // 60fps相当
-            }
-        });
+        // パッシブリスナーでパフォーマンス向上
+        window.addEventListener('scroll', handleScroll, { passive: true });
         
         console.log('Chat button scroll behavior initialized');
     }
