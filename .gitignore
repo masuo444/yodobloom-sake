@@ -1,21 +1,18 @@
-# macOS
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# Environment variables - APIキーが含まれているため絶対にコミットしない
+.env
+.env.local
+.env.production
+.env.staging
 
-# Netlify specific (不要)
-netlify.toml
-README_NETLIFY_SETUP.md
-functions/
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Development files
-*.log
-*.tmp
-*.temp
+# Build outputs
+dist/
+build/
 
 # Editor files
 .vscode/
@@ -24,7 +21,42 @@ functions/
 *.swo
 *~
 
-# API Setup guides with sensitive information
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Temporary folders
+tmp/
+temp/
+
+# Duplicate files
+index-netlify.html
+api/
+vercel.json
+
+# Documentation (not needed for deployment)
 API-SETUP-GUIDE.md
-NETLIFY-SETUP.md
 GITHUB-PAGES-SETUP.md
+NETLIFY-SETUP.md
+README_NETLIFY_SETUP.md
+
+# Test files (optional)
+api-test.html

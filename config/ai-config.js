@@ -4,7 +4,7 @@
 window.aiConfig = {
     // OpenAI Configuration
     openai: {
-        apiKey: window.location.hostname === 'localhost' ? 'YOUR_OPENAI_API_KEY' : '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',
+        apiKey: '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',
         model: 'gpt-4',
         maxTokens: 1000,
         temperature: 0.7
@@ -12,7 +12,7 @@ window.aiConfig = {
     
     // DeepL Configuration
     deepl: {
-        apiKey: window.location.hostname === 'localhost' ? 'YOUR_DEEPL_API_KEY' : 'd266de28-0978-4216-bb9d-17f137f6e904:fx',
+        apiKey: 'd266de28-0978-4216-bb9d-17f137f6e904:fx',
         apiUrl: 'https://api-free.deepl.com/v2/translate'
     },
     

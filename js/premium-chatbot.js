@@ -1,7 +1,8 @@
 // Premium Chatbot with Advanced UI/UX - 最高レベルのチャットボット体験
 
-// Language detection utility
-function detectLanguage(text) {
+// Enhanced language detection utility with DeepL integration
+async function detectLanguage(text, deeplService = null) {
+    // Primary pattern-based detection
     const japanesePattern = /[ひらがなカタカナ漢字]/;
     const chinesePattern = /[一-龯]/;
     const koreanPattern = /[ㄱ-ㅎㅏ-ㅣ가-힣]/;
@@ -18,9 +19,21 @@ function detectLanguage(text) {
         return 'th';
     } else if (vietnamesePattern.test(text)) {
         return 'vi';
-    } else {
-        return 'en';
     }
+    
+    // Use DeepL for more accurate detection if available
+    if (deeplService && deeplService.isConfigured()) {
+        try {
+            const detection = await deeplService.detectLanguage(text);
+            if (detection.success && detection.confidence > 0.8) {
+                return detection.language;
+            }
+        } catch (error) {
+            console.warn('DeepL language detection failed:', error);
+        }
+    }
+    
+    return 'en';
 }
 
 // Premium chatbot class with advanced features
@@ -38,6 +51,16 @@ class PremiumChatbot {
         this.unreadMessages = 0;
         this.messageQueue = [];
         this.isProcessingQueue = false;
+        
+        // Initialize API services - Netlify優先でフォールバック対応
+        if (window.NetlifyAPIService) {
+            this.apiService = new window.NetlifyAPIService();
+            this.useNetlify = true;
+        } else {
+            this.openaiService = new window.OpenAIService();
+            this.deeplService = new window.DeepLService();
+            this.useNetlify = false;
+        }
         
         this.initializeElements();
         this.bindEvents();
@@ -466,8 +489,12 @@ class PremiumChatbot {
         // Play send sound
         this.playSound('send');
         
-        // Detect user's language
-        this.userDetectedLanguage = detectLanguage(message);
+        // Detect user's language (enhanced detection)
+        if (this.useNetlify) {
+            this.userDetectedLanguage = await this.apiService.detectLanguage(message).then(result => result.language).catch(() => 'ja');
+        } else {
+            this.userDetectedLanguage = await detectLanguage(message, this.deeplService);
+        }
         
         // Update UI language if different from current
         if (this.userDetectedLanguage !== this.currentLanguage) {
@@ -584,33 +611,104 @@ class PremiumChatbot {
     }
     
     async getGPTResponse(message) {
-        // Direct API call to OpenAI
-        const response = await fetch('https://api.openai.com/v1/chat/completions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${this.config.openai.apiKey}`
-            },
-            body: JSON.stringify({
-                model: this.config.openai.model,
-                messages: [
-                    { role: 'system', content: this.config.chatbot.systemPrompt },
-                    ...this.conversationHistory.slice(-6),
-                    { role: 'user', content: message }
-                ],
-                max_tokens: this.config.openai.maxTokens,
-                temperature: this.config.openai.temperature
-            }),
-            signal: AbortSignal.timeout(30000)
-        });
-        
-        if (!response.ok) {
-            const errorData = await response.json().catch(() => ({}));
-            throw new Error(errorData.error?.message || `HTTP ${response.status}`);
+        try {
+            if (this.useNetlify) {
+                return await this.getNetlifyGPTResponse(message);
+            } else {
+                return await this.getDirectGPTResponse(message);
+            }
+        } catch (error) {
+            console.error('GPT Response Error:', error);
+            throw error;
         }
-        
-        const data = await response.json();
-        return data.choices[0]?.message?.content || 'AI response not available';
+    }
+
+    async getNetlifyGPTResponse(message) {
+        try {
+            let processedMessage = message;
+            let targetResponseLanguage = this.userDetectedLanguage;
+            
+            // If user language is not Japanese, translate to Japanese for better context
+            if (this.userDetectedLanguage !== 'ja') {
+                const translationResult = await this.apiService.translateText(message, 'JA', this.userDetectedLanguage);
+                if (translationResult.success) {
+                    processedMessage = translationResult.translatedText;
+                    console.log('Translated user input to Japanese:', processedMessage);
+                }
+            }
+            
+            // Get response from OpenAI via Netlify function
+            const aiResult = await this.apiService.sendToOpenAI(processedMessage, this.config.chatbot.systemPrompt);
+            
+            if (!aiResult.success) {
+                throw new Error(aiResult.error || 'OpenAI service failed');
+            }
+            
+            let finalResponse = aiResult.message;
+            
+            // If user language is not Japanese, translate response back
+            if (targetResponseLanguage !== 'ja') {
+                const responseTranslation = await this.apiService.translateText(finalResponse, targetResponseLanguage.toUpperCase(), 'JA');
+                if (responseTranslation.success) {
+                    finalResponse = responseTranslation.translatedText;
+                    console.log('Translated AI response to user language:', finalResponse);
+                }
+            }
+            
+            return finalResponse;
+            
+        } catch (error) {
+            console.error('Netlify GPT Response Error:', error);
+            throw error;
+        }
+    }
+
+    async getDirectGPTResponse(message) {
+        try {
+            // Enhanced GPT response with translation support
+            let processedMessage = message;
+            let targetResponseLanguage = this.userDetectedLanguage;
+            
+            // If user language is not Japanese and DeepL is configured, translate to Japanese for better context
+            if (this.userDetectedLanguage !== 'ja' && this.deeplService.isConfigured()) {
+                const translationResult = await this.deeplService.translateText(message, 'JA', this.userDetectedLanguage);
+                if (translationResult.success) {
+                    processedMessage = translationResult.translatedText;
+                    console.log('Translated user input to Japanese:', processedMessage);
+                }
+            }
+            
+            // Prepare conversation context
+            const conversationMessages = [
+                { role: 'system', content: this.config.chatbot.systemPrompt },
+                ...this.conversationHistory.slice(-6),
+                { role: 'user', content: processedMessage }
+            ];
+            
+            // Get response from OpenAI using the service
+            const aiResult = await this.openaiService.sendMessage(processedMessage, this.config.chatbot.systemPrompt);
+            
+            if (!aiResult.success) {
+                throw new Error(aiResult.error || 'OpenAI service failed');
+            }
+            
+            let finalResponse = aiResult.message;
+            
+            // If user language is not Japanese and we have a Japanese response, translate back
+            if (targetResponseLanguage !== 'ja' && this.deeplService.isConfigured()) {
+                const responseTranslation = await this.deeplService.translateText(finalResponse, targetResponseLanguage.toUpperCase(), 'JA');
+                if (responseTranslation.success) {
+                    finalResponse = responseTranslation.translatedText;
+                    console.log('Translated AI response to user language:', finalResponse);
+                }
+            }
+            
+            return finalResponse;
+            
+        } catch (error) {
+            console.error('Direct GPT Response Error:', error);
+            throw error;
+        }
     }
     
     getLocalResponse(message) {

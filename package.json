@@ -1,0 +1,32 @@
+{
+  "name": "yodobloom-sake-chatbot",
+  "version": "1.0.0",
+  "description": "yodobloom SAKE AI Chatbot with OpenAI GPT-4 and DeepL integration",
+  "main": "index.html",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'Static site - no build step required'",
+    "deploy": "netlify deploy --prod"
+  },
+  "dependencies": {
+    "openai": "^3.3.0",
+    "node-fetch": "^2.6.12"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.10.1"
+  },
+  "keywords": [
+    "yodobloom",
+    "sake",
+    "chatbot",
+    "openai",
+    "deepl",
+    "ai",
+    "japanese-sake"
+  ],
+  "author": "yodobloom SAKE Development Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
